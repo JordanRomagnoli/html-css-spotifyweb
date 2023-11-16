@@ -13,40 +13,75 @@
     GENERAL
 */
 
-*{
+html{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.container{
-    max-width: 1200px;
-    margin: 0 auto;
+:root{
+    --border_debug: 1px dashed;
+    --footer_height: 150px;
 }
 
+.container{
+    display: flex;
+}
+
+
+
 /*
-    HEADER
+    ASIDE
 */
+
+.container > aside{
+    min-width: 300px;
+}
 
 /*
     MAIN
 */
+
+.container > main{
+    width: calc(100% - 300px);
+    height: calc(100vh - var(--footer_height));
+    overflow: auto;
+}
+
+
+
+
+
+
+
+/*
+    FOOTER
+*/
+
+
+
 
 
 /*
     MEDIA QUERY
 */
 
-/* Caso base: mobile piccolo */
-@media screen and (min-width 480px){
+
+@media screen and (max-width: 1100px){
 }
-/* Caso: mobile grande*/
-@media screen and (min-width 576px){
+
+@media screen and (max-width: 700px){
 }
-/* Caso: tablet*/
-@media screen and (min-width 768px){
+
+@media screen and (max-width: 600px){
+    
+    .container > aside{
+        min-width: 80px;
+    }
+
+    .container > main{
+        width: calc(100% - 80px);
+    }
 }
-/* Caso: desktop*/
-@media screen and (min-width 992px){
-}
+
 
 
 
@@ -54,6 +89,20 @@
     DEBUG
 */
 
-.debug, .debug > div{
-    border: 1px dashed black;
+.debug footer{
+    min-height: var(--footer_height);
+    background-color: gray;
+}
+
+.debug aside, .debug main{
+    min-height: 500px;
+}
+
+
+.debug aside{
+    border: var(--border_debug) blue;
+} 
+
+.debug main{
+    border: var(--border_debug)  red;
 }
