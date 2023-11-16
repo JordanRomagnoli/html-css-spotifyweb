@@ -33,12 +33,16 @@ ul, ol{
 
 .container{
     display: flex;
+    height: calc(100vh - var(--footer_height));
 }
 
-.container > aside, .container > footer{
+.container > footer{
     padding: var(--padding-general);
 }
 
+.container > aside{
+    padding: var(--padding-general) 0;
+}
 
 .my-row{
     display: flex;
@@ -79,22 +83,111 @@ section .card h4{
 .container > aside{
     min-width: 250px;
     background-color: black;
+    height: 100%;
+    overflow: auto;
 }
 
+aside > .logo-container{
+    margin-bottom: 40px;
+    padding: calc(var(--padding-general) /2) var(--padding-general);
+}
 
+aside > .logo-container > img:last-child{
+    display: none;
+}
 
+aside > .logo-container > img{
+    height: 50px;
+    display: block;
+}
 
+aside > .icon-small{
+    text-align: center;
+    display: none;
+    padding: calc(var(--padding-general) /2) var(--padding-general);
+}
 
+aside > .icon-small > a{
+    text-decoration: none;
+    display: block;
+    color: gray;
+    font-size: 2rem;
+    font-weight: lighter;
+}
 
+aside > nav{
+    margin-bottom: 20px;
+}
+
+aside > nav li{
+    vertical-align: middle;
+}
+
+aside > nav li i{
+    font-size: 1.5rem;
+    margin-right: 5px;
+    font-weight: lighter;
+}
+
+aside > nav li:first-child{
+    border-left: 5px solid #bdff30;
+}
+
+aside > nav li > a{
+    display: block;
+    color: gray;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-decoration: none;
+    padding: calc(var(--padding-general) /2) var(--padding-general);
+}
+
+aside > nav li:first-child > a{
+    color: white;
+}
+
+aside > .playlist{
+    padding: calc(var(--padding-general) /2) var(--padding-general);
+}
+
+aside > .playlist > h4{
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+aside > .playlist > a{
+    display: block;
+    color: gray;
+    font-weight: bold;
+    text-decoration: none;
+    padding: calc(var(--padding-general) /2) 0;
+}
+
+aside > .playlist i{
+    background-color: lightgrey;
+    font-size: 1.3rem;
+    color: black;
+    padding: calc(var(--padding-general) /2);
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+aside .playlist-container  a{
+    display: block;
+    color: gray;
+    padding: calc(var(--padding-general) /2) 0;
+    text-decoration: none;
+}
 
 /*
     MAIN
 */
 
 .container > main{
-    width: calc(100% - 250px);
-    height: calc(100vh - var(--footer_height));
+    width: 100%;
     overflow: auto;
+    height: 100%;
 }
 
 main > header{
@@ -219,12 +312,68 @@ footer{
     .container > main{
         width: calc(100% - 80px);
     }
+
+    aside > .logo-container{
+        margin: 0;
+    }
+
+    aside > .logo-container > img:first-child{
+        display: none;
+    }
+
+    aside > .logo-container > img:last-child{
+        display: block;
+    }
+
+    aside > .main-icon, aside > .playlist:not(.main-icon i){
+        display: none;
+    }
+
+    aside > .icon-small{
+        display: block;
+    }
 }
 
 
 /*
     DEBUG
 */
+.debug footer > *{
+    border: var(--border_debug) white;
+    display: flex;
+    align-items: center;
+}
+
+.debug footer{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    min-height: var(--footer_height);
+    z-index: 2;
+}
+
+.debug footer > .right{
+    justify-content: flex-end;
+}
+
+.debug footer > .left, .debug footer > .right{
+    width: 30%;
+    padding: 0 var(--padding-general);
+}
+
+.debug footer > .central{
+    width: 30%;
+    justify-content: center;
+}
+
+
+
+
+
+.debug aside .playlist-container{
+}
+
+
 
 
 .debug main > .main_container > .recently_played > .my-row > .col-1-7{
@@ -246,7 +395,7 @@ footer{
 }
 
 .debug footer{
-    min-height: var(--footer_height);
+    
 }
 
 .debug aside, .debug main{
