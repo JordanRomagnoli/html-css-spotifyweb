@@ -35,18 +35,18 @@ ul, ol{
     display: flex;
 }
 
-.container > aside, .container > main > .main_container, .container > footer{
+.container > aside, .container > footer{
     padding: var(--padding-general);
 }
 
 
 .my-row{
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 section{
-    padding: var(--padding-general) 0;
+    padding: var(--padding-general);
 }
 
 section h2{
@@ -55,9 +55,17 @@ section h2{
     margin-bottom: 20px;
 }
 
-section .card h3{
+section h3{
+    color: gray;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+section .col-1-7 .card h3{
     color: white;
     padding: var(--padding-general) 0;
+    line-height: 1.3rem;
+    font-size: 1rem;
 }
 
 section .card h4{
@@ -69,16 +77,22 @@ section .card h4{
 */
 
 .container > aside{
-    min-width: 300px;
+    min-width: 250px;
     background-color: black;
 }
+
+
+
+
+
+
 
 /*
     MAIN
 */
 
 .container > main{
-    width: calc(100% - 300px);
+    width: calc(100% - 250px);
     height: calc(100vh - var(--footer_height));
     overflow: auto;
 }
@@ -102,6 +116,7 @@ main > header > .button{
     border-radius: 40px;
     padding: 15px calc(var(--padding-general) *2);
     border: 1px solid white;
+    background-color: transparent;
 }
 
 main > .main_container{
@@ -115,7 +130,7 @@ main > .main_container{
 
  main > .main_container > .section_select li{
     display: inline-block;
-    padding-bottom: var(--padding-general);
+    padding: var(--padding-general) 0;
 }
 
  main > .main_container > .section_select li > a{
@@ -134,23 +149,31 @@ main .main_container > .section_select li > .selected_effect{
     margin: 0 auto;
 }
 
-main > .main_container > .recently_played > .my-row > .col-1-6{
-    width: calc(100% / 7);
-}
-
-main > .main_container > .recently_played > .my-row{
+main > .main_container > section > .my-row{
     padding-top: var(--padding-general);
+    margin-left: -10px;
+    margin-right: -10px;
 }
 
-main > .main_container > .recently_played > .my-row > .col-1-6 > .card{
-    padding: calc(var(--padding-general) /2);
+main > .main_container > section > .my-row > .col-1-7{
+    width: calc((100% / 6) - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+}
+
+main > .main_container > section > .my-row > .col-1-7 > .card{
     height: 100%;
     text-align: center;
 }
 
-main > .main_container > .recently_played > .my-row > .col-1-6 > .card > img{
+main > .main_container > section > .my-row > .col-1-7 > .card > img{
     width: 100%;
     display: block;
+}
+
+main > .main_container > .most_popular > .my-row > .col-1-7 > .card > img{
+    border-radius: 50%;
 }
 /*
     FOOTER
@@ -166,9 +189,25 @@ footer{
 
 
 @media screen and (max-width: 1100px){
+    .my-row{
+        flex-wrap: wrap;
+    }
+
+    main > .main_container > section > .my-row > .col-1-7{
+        width: calc((100% / 4) - 20px);
+    }
+
+    main > .main_container > section > .my-row > .col-1-7 > .card{
+        padding-right: 0;
+    }
 }
 
+
+
 @media screen and (max-width: 700px){
+    main > .main_container > section > .my-row > .col-1-7{
+        width: calc((100% / 2) - 20px);
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -188,13 +227,13 @@ footer{
 */
 
 
-.debug main > .main_container > .recently_played > .my-row > .col-1-6{
-    min-height: 100px;
-    border: var(--border_debug) red;  
+.debug main > .main_container > .recently_played > .my-row > .col-1-7{
+    /* min-height: 100px; */
+     
 }
 
-.debug main > .main_container > .recently_played > .my-row > .col-1-6 > .card{
-    border: var(--border_debug) blue;
+.debug main > .main_container > .recently_played > .my-row > .col-1-7 > .card{
+    
 }
 
 .debug main > .main_container{
