@@ -20,13 +20,16 @@ html{
 :root{
     --border_debug: 1px dashed;
     --footer_height: 150px;
+    --padding-general: 20px;
 }
 
 .container{
     display: flex;
 }
 
-
+.container > aside, .container > main > .main_container, .container > footer{
+    padding: var(--padding-general);
+}
 
 /*
     ASIDE
@@ -46,9 +49,19 @@ html{
     overflow: auto;
 }
 
+main > header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: var(--padding-general) 25px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
 
-
-
+main > .main_container{
+    scroll-margin-top: 58px;
+}
 
 
 
@@ -89,6 +102,21 @@ html{
     DEBUG
 */
 
+
+.debug main > .main_container > .prova-scroll{
+    min-height: 300px;
+    border: var(--border_debug) white;
+}
+
+.debug main > .main_container{
+    background-color: blue;
+}
+
+
+.debug main > header{
+    background-color: aqua;
+}
+
 .debug footer{
     min-height: var(--footer_height);
     background-color: gray;
@@ -106,3 +134,4 @@ html{
 .debug main{
     border: var(--border_debug)  red;
 }
+
