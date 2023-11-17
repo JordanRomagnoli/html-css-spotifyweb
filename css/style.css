@@ -180,6 +180,7 @@ aside > .playlist i{
 aside > .playlist-container{
     overflow: auto;
     height: 100%;
+    min-height: 100px;
 }
 
 aside .playlist-container  a{
@@ -365,13 +366,15 @@ footer{
 }
 
 
-footer > *{
+footer, footer > *, footer > .left > .song ,footer > .central > *, footer > .right > *{
     display: flex;
+}
+
+footer > *, footer > .left > .song, footer > .central > *{
     align-items: center;
 }
 
 footer{
-    display: flex;
     justify-content: space-between;
 }
 
@@ -385,38 +388,7 @@ footer > .left, .debug footer > .right{
 }
 
 footer > .left > .song{
-    display: flex;
-    align-items: center;
     margin-right: 20px;
-}
-
-footer > .central{
-    flex-wrap: wrap;
-    width: 40%;
-    justify-content: center;
-}
-
-footer > .central > *{
-    width: 100%;
-    height: 50%;
-}
-footer > .central > .command{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-}
-
-footer > .central > .command > button{
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 1.1rem;
-    padding: 10px;
-}
-
-footer > .central > .command > #play{
-    font-size: 2rem;
 }
 
 footer > .left a{
@@ -443,10 +415,38 @@ footer > .left > div > i{
     padding: calc(var(--padding-general) /2);
 }
 
+footer > .central{
+    flex-wrap: wrap;
+    width: 40%;
+    justify-content: center;
+}
+
+footer > .central > *{
+    width: 100%;
+    height: 50%;
+}
+footer > .central > .command{
+    justify-content: center;
+    padding: calc(var(--padding-general) / 2);
+}
+
+footer > .central > .command > button{
+    font-size: 1.1rem;
+}
+
+footer > .central > .command > button, footer > .right > button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: calc(var(--padding-general) / 2);
+}
+
+footer > .central > .command > #play{
+    font-size: 2rem;
+}
+
 footer > .central .track{
-    display: flex;
     justify-content: space-between;
-    align-items: center;
     padding-bottom: 50px;
 }
 
@@ -457,7 +457,7 @@ footer > .central .track > span{
     display: block;
 }
 
-footer  .full-track{
+footer .full-track{
     border-radius: 5px;
     height: 5px;
     background-color: gray;
@@ -465,6 +465,20 @@ footer  .full-track{
 }
 
 footer .full-track > .progressiv-track{
+    height: 5px;
+    background-color: white;
+    width: 20%;
+}
+
+footer  .full-volume{
+    border-radius: 5px;
+    height: 5px;
+    background-color: gray;
+    width: 50%;
+    margin-left: 10px;
+}
+
+footer .full-volume > .progressiv-volume{
     height: 5px;
     background-color: white;
     width: 20%;
