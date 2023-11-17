@@ -33,7 +33,6 @@ ul, ol{
 
 .container{
     display: flex;
-    height: calc(100vh - var(--footer_height));
 }
 
 .container > footer{
@@ -46,7 +45,7 @@ ul, ol{
 
 .my-row{
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
 }
 
 section{
@@ -83,8 +82,8 @@ section .card h4{
 .container > aside{
     min-width: 250px;
     background-color: black;
-    height: 100%;
-    overflow: auto;
+    height: calc(100vh - var(--footer_height));
+    overflow: hidden;
 }
 
 aside > .logo-container{
@@ -99,6 +98,7 @@ aside > .logo-container > img:last-child{
 aside > .logo-container > img{
     height: 50px;
     display: block;
+    margin: 0 auto;
 }
 
 aside > .icon-small{
@@ -173,11 +173,83 @@ aside > .playlist i{
     font-weight: bold;
 }
 
+aside > .playlist .playlist-container{
+    overflow: auto;
+}
+
 aside .playlist-container  a{
     display: block;
     color: gray;
     padding: calc(var(--padding-general) /2) 0;
     text-decoration: none;
+}
+
+
+aside > .user-info{
+    position: sticky;
+    top: 100%;
+    padding: 0 var(--padding-general);
+    background-color: black;
+    margin-bottom: -20px;
+}
+
+aside > .user-info a{
+    color: gray;
+    display: block;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+aside > .user-info > a{
+    border-bottom: 1px solid gray;
+}
+
+aside > .user-info > .user > img, aside > .user-info > .user > a{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+aside > .user-info img{
+    margin-right: 5px;
+    height: 50px;
+    padding: 5px;
+    color: white;
+    background-color: gray;
+    border-radius: 50%;
+}
+
+aside > .user-info > .user{
+    padding: calc(var(--padding-general) /2) 0;
+}
+
+aside > .user-info > .user > a{
+    font-weight: bold;
+    color: white;
+}
+
+aside > .user-info-small{
+    display: none;
+    position: sticky;
+    top: 100%;
+    padding: 0 var(--padding-general);
+    text-align: center;
+}
+
+aside > .user-info-small a{
+    color: gray;
+}
+
+aside > .user-info-small i{
+    font-size: 1.3rem;
+    padding: calc(var(--padding-general) /2);
+}
+
+aside > .user-info-small img{
+    height: 50px;
+    padding: 5px;
+    color: white;
+    background-color: gray;
+    border-radius: 50%;
 }
 
 /*
@@ -187,7 +259,7 @@ aside .playlist-container  a{
 .container > main{
     width: 100%;
     overflow: auto;
-    height: 100%;
+    height: calc(100vh - var(--footer_height));
 }
 
 main > header{
@@ -268,12 +340,125 @@ main > .main_container > section > .my-row > .col-1-7 > .card > img{
 main > .main_container > .most_popular > .my-row > .col-1-7 > .card > img{
     border-radius: 50%;
 }
+
+
+
+
+
+
+
 /*
     FOOTER
 */
 
 footer{
     background-color: #282828;
+}
+
+
+footer > *{
+    display: flex;
+    align-items: center;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer > .right{
+    justify-content: flex-end;
+}
+
+footer > .left, .debug footer > .right{
+    padding: 0 var(--padding-general);
+    width: 25%;
+}
+
+footer > .left > .song{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+footer > .central{
+    flex-wrap: wrap;
+    width: 40%;
+    justify-content: center;
+}
+
+footer > .central > *{
+    width: 100%;
+    height: 50%;
+}
+footer > .central > .command{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+footer > .central > .command > button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+footer > .central > .command > #play{
+    font-size: 2rem;
+}
+
+footer > .left a{
+    color: gray;
+    text-decoration: none;
+}
+
+footer > .left{
+    justify-content: flex-start;
+}
+
+footer > .left a > h4{
+    color: white;
+}
+
+footer > .left img{
+    max-width: 80px;
+    width: 50%;
+    margin-right: 20px;
+}
+
+footer > .left > div > i{
+    color: gray;
+    padding: calc(var(--padding-general) /2);
+}
+
+footer > .central .track{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+footer > .central .track > span{
+    padding: 0 5px;
+    font-size: 0.8rem;
+    color: white;
+    display: block;
+}
+
+footer  .full-track{
+    border-radius: 5px;
+    height: 5px;
+    background-color: gray;
+    width: 90%;
+}
+
+footer .full-track > .progressiv-track{
+    height: 5px;
+    background-color: white;
+    width: 20%;
 }
 
 /*
@@ -300,6 +485,15 @@ footer{
 @media screen and (max-width: 700px){
     main > .main_container > section > .my-row > .col-1-7{
         width: calc((100% / 2) - 20px);
+    }
+
+    footer > .left, .debug footer > .right{
+        padding: 0 10px;
+        width: 30%;
+    }
+
+    footer > .left{
+        justify-content: space-between;
     }
 }
 
@@ -332,38 +526,35 @@ footer{
     aside > .icon-small{
         display: block;
     }
+
+    aside > .user-info{
+        display: none;
+    }
+
+    aside > .user-info-small{
+        display: block;
+    }
+
 }
 
 
 /*
     DEBUG
 */
+
+.debug aside .user-info{
+}
+
+
+
+
+
 .debug footer > *{
-    border: var(--border_debug) white;
-    display: flex;
-    align-items: center;
+    /* border: var(--border_debug) white; */
 }
 
 .debug footer{
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    min-height: var(--footer_height);
-    z-index: 2;
-}
 
-.debug footer > .right{
-    justify-content: flex-end;
-}
-
-.debug footer > .left, .debug footer > .right{
-    width: 30%;
-    padding: 0 var(--padding-general);
-}
-
-.debug footer > .central{
-    width: 30%;
-    justify-content: center;
 }
 
 
