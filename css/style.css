@@ -32,7 +32,9 @@ ul, ol{
 }
 
 .container{
+    height: calc(100vh - var(--footer_height));
     display: flex;
+    align-items: flex-start;
 }
 
 .container > footer{
@@ -82,8 +84,10 @@ section .card h4{
 .container > aside{
     min-width: 250px;
     background-color: black;
-    height: calc(100vh - var(--footer_height));
+    height: 100%;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 aside > .logo-container{
@@ -146,7 +150,7 @@ aside > nav li:first-child > a{
     color: white;
 }
 
-aside > .playlist{
+aside > .playlist, aside > .playlist-container{
     padding: calc(var(--padding-general) /2) var(--padding-general);
 }
 
@@ -173,8 +177,9 @@ aside > .playlist i{
     font-weight: bold;
 }
 
-aside > .playlist .playlist-container{
+aside > .playlist-container{
     overflow: auto;
+    height: 100%;
 }
 
 aside .playlist-container  a{
@@ -184,14 +189,18 @@ aside .playlist-container  a{
     text-decoration: none;
 }
 
-
 aside > .user-info{
+    padding: 0 var(--padding-general);
+    background-color: black;
+}
+
+/* aside > .user-info{
     position: sticky;
     top: 100%;
     padding: 0 var(--padding-general);
     background-color: black;
     margin-bottom: -20px;
-}
+} */
 
 aside > .user-info a{
     color: gray;
@@ -259,7 +268,7 @@ aside > .user-info-small img{
 .container > main{
     width: 100%;
     overflow: auto;
-    height: calc(100vh - var(--footer_height));
+    height: 100%;;
 }
 
 main > header{
@@ -500,11 +509,11 @@ footer .full-track > .progressiv-track{
 @media screen and (max-width: 600px){
     
     .container > aside{
-        min-width: 80px;
+        min-width: 50px;
     }
 
     .container > main{
-        width: calc(100% - 80px);
+        width: calc(100% - 50px);
     }
 
     aside > .logo-container{
