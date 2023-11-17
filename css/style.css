@@ -373,19 +373,11 @@ main > .main_container > section > .my-row > .col-1-7 > .card > .song-img > .pla
 
 /* HOVER - ASIDE - MAIN */
 
-aside > .icon-small > a:hover{
-    color: white;
+main > header > .button:hover{
+    transform: scale(1.1);
 }
 
-aside > .playlist-container a:hover{
-    color: white;
-}
-
-aside > nav li > a:hover{
-    color: white;
-}
-
-aside > .user-info a:hover{
+aside > .icon-small > a:hover, aside > .playlist-container a:hover, aside > nav li > a:hover, aside > .user-info a:hover, aside > .user-info-small a:hover, main > .main_container > .section_select li > a:hover{
     color: white;
 }
 
@@ -393,13 +385,6 @@ main > .main_container > section > .my-row > .col-1-7 > .card:hover  .play{
     display: block;
 }
 
-aside > .user-info-small a:hover{
-    color: white;
-}
-
-main > .main_container > .section_select li > a:hover{
-    color: white;
-}
 
 
 /*
@@ -519,9 +504,9 @@ footer .full-track{
 footer .full-track > .progressiv-track{
     height: 5px;
     background-color: white;
-    width: 20%;
     animation: slider 30s linear infinite;
 }
+
 
 @keyframes slider {
     0%{
@@ -571,6 +556,11 @@ footer .central .switch-dot{
 }
 
 /* HOVER - FOOTER */
+
+footer > .central > .command > #play:hover{
+    transform: scale(1.1);
+}
+
 
 footer .full-track > .progressiv-track:hover, footer .full-volume > .progressiv-volume:hover{
     background-color: #bdff30;
