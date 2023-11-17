@@ -402,7 +402,6 @@ main > .main_container > .section_select li > a:hover{
 }
 
 
-
 /*
     FOOTER
 */
@@ -535,6 +534,7 @@ footer .full-track > .progressiv-track{
 
 footer  .full-volume{
     width: 50%;
+    min-width: 50px;
     margin-left: 10px;
 }
 
@@ -568,7 +568,6 @@ footer .central .switch-dot{
         right: 0%;
     }
 }
-
 
 
 /* HOVER - FOOTER */
@@ -615,6 +614,10 @@ footer .switch-dot:hover footer .full-track > .progressiv-track{
     footer > .left{
         justify-content: space-between;
     }
+
+    footer > .central > .command > button, footer > .right > button{
+        padding: 5px;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -659,70 +662,14 @@ footer .switch-dot:hover footer .full-track > .progressiv-track{
         font-size: 0.8rem;
     }
 
+    footer > .left img{
+        margin-right: 5px;
+    }
+
 }
 
 
 /*
     DEBUG
 */
-
-.debug aside .user-info{
-}
-
-
-
-
-
-.debug footer > *{
-    /* border: var(--border_debug) white; */
-}
-
-.debug footer{
-
-}
-
-
-
-
-
-.debug aside .playlist-container{
-}
-
-
-
-
-.debug main > .main_container > .recently_played > .my-row > .col-1-7{
-    /* min-height: 100px; */
-     
-}
-
-.debug main > .main_container > .recently_played > .my-row > .col-1-7 > .card{
-    
-}
-
-.debug main > .main_container{
-    
-}
-
-
-.debug main > header{
-    
-}
-
-.debug footer{
-    
-}
-
-.debug aside, .debug main{
-    /* min-height: 500px; */
-}
-
-
-.debug aside{
-    
-} 
-
-.debug main{
-    
-}
 
