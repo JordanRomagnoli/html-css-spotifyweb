@@ -408,6 +408,7 @@ main > .main_container > .section_select li > a:hover{
 
 footer{
     background-color: #282828;
+    min-height: var(--footer_height);
 }
 
 
@@ -569,7 +570,6 @@ footer .central .switch-dot{
     }
 }
 
-
 /* HOVER - FOOTER */
 
 footer .full-track > .progressiv-track:hover, footer .full-volume > .progressiv-volume:hover{
@@ -664,6 +664,10 @@ footer .switch-dot:hover footer .full-track > .progressiv-track{
 
     footer > .left img{
         margin-right: 5px;
+    }
+
+    footer  .full-volume{
+        min-width: 20px;
     }
 
 }
