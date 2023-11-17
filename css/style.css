@@ -463,6 +463,7 @@ footer > .central > .command{
 
 footer > .central > .command > button{
     font-size: 1.1rem;
+    cursor: pointer;
 }
 
 footer > .central > .command > button, footer > .right > button{
@@ -470,6 +471,7 @@ footer > .central > .command > button, footer > .right > button{
     border: none;
     color: white;
     padding: calc(var(--padding-general) / 2);
+    cursor: pointer;
 }
 
 footer > .central > .command > #play{
@@ -557,10 +559,17 @@ footer .central .switch-dot{
 
 /* HOVER - FOOTER */
 
+.playlist i:hover{
+    background-color: white;
+}
+
+.playlist > a:hover{
+    color:white;
+}
+
 footer > .central > .command > #play:hover{
     transform: scale(1.1);
 }
-
 
 footer .full-track > .progressiv-track:hover, footer .full-volume > .progressiv-volume:hover{
     background-color: #bdff30;
@@ -570,6 +579,14 @@ footer .switch-dot:hover footer .full-track > .progressiv-track{
     background-color: #bdff30;
 }
 
+footer > .left .song a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+footer > .left .action i:hover{
+    color: white;
+}
 /*
     MEDIA QUERY
 */
