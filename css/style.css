@@ -195,14 +195,6 @@ aside > .user-info{
     background-color: black;
 }
 
-/* aside > .user-info{
-    position: sticky;
-    top: 100%;
-    padding: 0 var(--padding-general);
-    background-color: black;
-    margin-bottom: -20px;
-} */
-
 aside > .user-info a{
     color: gray;
     display: block;
@@ -342,18 +334,72 @@ main > .main_container > section > .my-row > .col-1-7 > .card{
     text-align: center;
 }
 
-main > .main_container > section > .my-row > .col-1-7 > .card > img{
+main > .main_container > section > .my-row > .col-1-7 > .card > .song-img{
+    width: 100%;
+    position: relative;
+}
+
+main > .main_container > section > .my-row > .col-1-7 > .card > .song-img > img{
     width: 100%;
     display: block;
 }
 
-main > .main_container > .most_popular > .my-row > .col-1-7 > .card > img{
+main > .main_container > .most_popular > .my-row > .col-1-7 > .card > .song-img > img, main > .main_container > .most_popular > .my-row > .col-1-7 > .card > .song-img > .play{
     border-radius: 50%;
 }
 
+main > .main_container > section > .my-row > .col-1-7 > .card > .song-img > .play{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: none;
+    backdrop-filter: blur(1.3px);
+}
+
+main > .main_container > section > .my-row > .col-1-7 > .card > .song-img > .play > i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    display: block;
+}
 
 
+/* HOVER - ASIDE - MAIN */
 
+aside > .icon-small > a:hover{
+    color: white;
+}
+
+aside > .playlist-container a:hover{
+    color: white;
+}
+
+aside > nav li > a:hover{
+    color: white;
+}
+
+aside > .user-info a:hover{
+    color: white;
+}
+
+main > .main_container > section > .my-row > .col-1-7 > .card:hover  .play{
+    display: block;
+}
+
+aside > .user-info-small a:hover{
+    color: white;
+}
+
+main > .main_container > .section_select li > a:hover{
+    color: white;
+}
 
 
 
@@ -457,10 +503,16 @@ footer > .central .track > span{
     display: block;
 }
 
-footer .full-track{
+footer .full-track, footer .full-volume{
+    position: relative;
+    display: flex;
+    align-items: center;
     border-radius: 5px;
     height: 5px;
     background-color: gray;
+}
+
+footer .full-track{
     width: 90%;
 }
 
@@ -468,12 +520,20 @@ footer .full-track > .progressiv-track{
     height: 5px;
     background-color: white;
     width: 20%;
+    animation: slider 30s linear infinite;
+}
+
+@keyframes slider {
+    0%{
+        width: 0%;
+    }
+
+    100%{
+        width: 100%;
+    }
 }
 
 footer  .full-volume{
-    border-radius: 5px;
-    height: 5px;
-    background-color: gray;
     width: 50%;
     margin-left: 10px;
 }
@@ -482,6 +542,43 @@ footer .full-volume > .progressiv-volume{
     height: 5px;
     background-color: white;
     width: 20%;
+}
+
+footer .switch-dot{
+    position: absolute;
+    cursor: pointer;
+    padding: 5px;
+    right: 80%;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+footer .central .switch-dot{
+    animation: dot-slider 30s linear infinite
+}
+
+@keyframes dot-slider{
+    0%{
+        right: 100%;
+    }
+
+    100%{
+        right: 0%;
+    }
+}
+
+
+
+/* HOVER - FOOTER */
+
+footer .full-track > .progressiv-track:hover, footer .full-volume > .progressiv-volume:hover{
+    background-color: #bdff30;
+}
+
+footer .switch-dot:hover footer .full-track > .progressiv-track{
+    background-color: #bdff30;
 }
 
 /*
@@ -542,7 +639,7 @@ footer .full-volume > .progressiv-volume{
         display: block;
     }
 
-    aside > .main-icon, aside > .playlist:not(.main-icon i){
+    aside > .main-icon, aside > .playlist, .playlist-container{
         display: none;
     }
 
@@ -556,6 +653,10 @@ footer .full-volume > .progressiv-volume{
 
     aside > .user-info-small{
         display: block;
+    }
+
+    footer > .left a > h4{
+        font-size: 0.8rem;
     }
 
 }
