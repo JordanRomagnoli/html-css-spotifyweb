@@ -108,22 +108,28 @@ aside > .logo-container > img{
 aside > .icon-small{
     text-align: center;
     display: none;
-    padding: calc(var(--padding-general) /2) var(--padding-general);
 }
 
 aside > .icon-small > a{
     text-decoration: none;
     display: block;
     color: gray;
-    font-size: 2rem;
-    font-weight: lighter;
 }
 
 aside > nav{
     margin-bottom: 20px;
 }
 
-aside > nav li{
+aside > .icon-small, aside > nav li{
+    padding: calc(var(--padding-general) /2) var(--padding-general);
+}
+
+aside > .main-icon li > img, aside > .icon-small > a > img{
+    height: 40px;
+    color: gray;
+} 
+
+aside > .main-icon li a, aside > .main-icon li img{
     vertical-align: middle;
 }
 
@@ -138,15 +144,14 @@ aside > nav li:first-child{
 }
 
 aside > nav li > a{
-    display: block;
+    /* display: block; */
     color: gray;
     font-weight: bold;
     font-size: 0.9rem;
     text-decoration: none;
-    padding: calc(var(--padding-general) /2) var(--padding-general);
 }
 
-aside > nav li:first-child > a{
+aside > nav li:first-child > a, aside > nav li:first-child > img{
     color: white;
 }
 
@@ -273,6 +278,7 @@ main > header{
     top: 0;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
 }
 
 main > header > .button{
@@ -357,7 +363,6 @@ main > .main_container > section > .my-row > .col-1-7 > .card > .song-img > .pla
     width: 100%;
     height: 100%;
     display: none;
-    backdrop-filter: blur(1.3px);
 }
 
 main > .main_container > section > .my-row > .col-1-7 > .card > .song-img > .play > i{
